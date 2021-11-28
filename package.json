@@ -1,0 +1,25 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon app.js",
+    "seed": "./node_modules/.bin/env-cmd -f ./config/dev.env node ./src/db/heroesSeed.js",
+    "seedtest": "./node_modules/.bin/env-cmd -f ./config/dev.env node ./src/db/testHeroesSeed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15",
+    "password-validator": "^5.2.1"
+  }
+}
