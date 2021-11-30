@@ -18,8 +18,10 @@
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
     "mongoose": "^6.0.13",
     "nodemon": "^2.0.15",
-    "password-validator": "^5.2.1"
+    "password-validator": "^5.2.1",
+    "winston": "^3.3.3"
   }
 }

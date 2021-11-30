@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 const Hero = require("../models/heroSchema");
 const Trainer = require("../models/trainerSchema");
-const trainerID = '61a233236d5100e29570a6d7'
-let newDate = new Date();
-newDate = newDate.getFullYear() + "-" + newDate.getMonth() + "-" + newDate.getDay()
+const trainerID = '61a4a3d9eb7fe2c73f11d118'
+let newDate = moment().format('YYYY-MM-DD');
 const heroes =
     [
         new Hero({
@@ -11,7 +11,7 @@ const heroes =
             suitColor: ["yellow", "red"],
             ability: "attacker",
             currentPower: 132.4,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: trainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/icon-pikachu-transparent-background-2e770213e63043026fed9578580be392.png"
@@ -21,7 +21,7 @@ const heroes =
             suitColor: ["cyan", "brown", "yellow"],
             ability: "attacker",
             currentPower: 84.5,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: trainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/pokemon-go-pikachu-squirtle-charmander-pokemon-png-05712d2c4e89106fec1bde027633d0c9.png"
@@ -31,7 +31,7 @@ const heroes =
             suitColor: ["green", "cyan"],
             ability: "attacker",
             currentPower: 72.8,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: trainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/pokemon-red-and-blue-ash-ketchum-bulbasaur-wikia-pokemon-png-a206e18427b09658827e2da4567c5cdc.png"
@@ -41,7 +41,7 @@ const heroes =
             suitColor: ["red", "yellow"],
             ability: "attacker",
             currentPower: 53.7,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: trainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/5bbc0588b45d1-48b6b27aac180cd993dc0c23903bdf96.png"
@@ -51,7 +51,7 @@ const heroes =
             suitColor: ["lightgreen", "green"],
             ability: "defender",
             currentPower: 28.3,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: trainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/5bbeb842744b8-cb41eb513278cdda0b9811cd4ce13d5a.png"

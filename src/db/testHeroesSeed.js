@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
+const moment = require('moment');
 const Hero = require("../models/heroSchema");
 const Trainer = require("../models/trainerSchema");
-const testTrainerID = '61a35009a7eed5f73302bc6c';
+const testTrainerID = '61a4d2a510590e624b3d0335';
 
-let newDate = new Date();
-newDate = newDate.getFullYear() + "-" + newDate.getMonth() + "-" + newDate.getDay()
+let newDate = moment().format('YYYY-MM-DD');
 
 const heroes =
     [
@@ -13,7 +13,7 @@ const heroes =
             suitColor: ["blue", "lightblue"],
             ability: "attacker",
             currentPower: 232.4,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: testTrainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/Thanos-PNG-Free-Download.png"
@@ -23,7 +23,7 @@ const heroes =
             suitColor: ["red"],
             ability: "attacker",
             currentPower: 154.5,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: testTrainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/Wonder-Woman-Free-PNG-Image.png"
@@ -33,7 +33,7 @@ const heroes =
             suitColor: ["blue", "black"],
             ability: "attacker",
             currentPower: 90.8,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: testTrainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/Invisible-Woman-Free-Download-PNG.png"
@@ -43,7 +43,7 @@ const heroes =
             suitColor: ["red", "yellow"],
             ability: "defender",
             currentPower: 64.3,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: testTrainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/Hawkeye-Download-PNG.png"
@@ -53,7 +53,7 @@ const heroes =
             suitColor: ["lightgreen", "green", "red"],
             ability: "defender",
             currentPower: 195.3,
-            numOfTrains: 0,
+            trainingCount: 0,
             trainer: testTrainerID,
             lastTrainDate: newDate,
             image: "https://matrix-heroes.s3.eu-west-2.amazonaws.com/Aquaman-PNG-Clipart.png"

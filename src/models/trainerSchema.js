@@ -53,6 +53,28 @@ trainerSchema.methods.generateToken = async function (next) {
     return token;
 }
 
+trainerSchema.methods.populateHeros = async function () {
+    const trainer = this;
+    await trainer.populate("heroes.hero");
+    const heroes = trainer.heroes;
+    heroes.map((curField) => {
+        const hero = curField.hero;
+        hero.validateTrainingCount();
+    });
+}
+
+trainerSchema.statics.findTrainerAndValidatePassword = async (username, password) => {
+    const trainer = await Trainer.findOne({ username });
+    if (!trainer)
+        throw new Error({ status: 403, msg: "Password or username is invalid" })
+
+
+    const isPassMatch = await bcrypt.compare(password, trainer.password);
+    if (!isPassMatch)
+        throw new Error({ status: 401, msg: "Password or username is invalid" })
+    return trainer;
+}
+
 const Trainer = mongoose.model("Trainer", trainerSchema)
 
 module.exports = Trainer;
